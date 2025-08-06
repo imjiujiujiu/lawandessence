@@ -1,0 +1,103 @@
+.slick {
+  margin-bottom: 0 !important;
+
+  .slick-arrow {
+    top: auto;
+    bottom: px(80);
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: px(4);
+    align-items: center;
+    z-index: 5;
+    font-size: px(20);
+    font-weight: 800;
+    letter-spacing: px(1);
+    padding: px(8) px(4);
+    border-radius: 0;
+    border-bottom: px(1) solid white;
+    color: white;
+    font-family: "Outfit", Arial, sans-serif;
+    transition: transform 0.2s;
+    backdrop-filter: blur(px(1));
+
+    &::before {
+      opacity: 1;
+    }
+
+    &.slick-prev {
+      left: px(64);
+
+      &::before {
+        content: url(../img/icon/arrowL.svg);
+      }
+    }
+
+    &.slick-next {
+      right: px(64);
+
+      &::before {
+        content: url(../img/icon/arrowL.svg);
+        transform: rotate(180deg);
+        order: 2;
+      }
+    }
+
+    &:hover {
+      box-shadow: none;
+
+      &.slick-prev {
+        transform: translate(px(-8), -50%);
+      }
+
+      &.slick-next {
+        transform: translate(px(8), -50%);
+      }
+    }
+  }
+
+  .slick-dots {
+    bottom: px(32);
+
+    li {
+      height: px(3);
+      width: px(50);
+
+      button {
+        height: px(3);
+        width: px(50);
+
+        &::before {
+          content: "";
+          height: px(3);
+          width: px(50);
+          background-color: white;
+          transition: opacity 0.3s;
+        }
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  @include max-to(pad) {
+    .slick-arrow {
+      bottom: px(20);
+
+      &.slick-prev {
+        left: px(24);
+      }
+
+      &.slick-next {
+        right: px(24);
+      }
+    }
+
+    .slick-dots {
+      bottom: auto;
+      top: 90svw;
+    }
+  }
+}

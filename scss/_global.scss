@@ -1,0 +1,110 @@
+/* -- Global.scss -- */
+/* 反白選取樣式 */
+::-moz-selection {
+  background-color: color(secondary);
+  color: color(white);
+}
+
+::selection {
+  background-color: color(secondary);
+  color: color(white);
+}
+
+::-webkit-scrollbar {
+  width: px(8);
+  background-color: transparent;
+  border-radius: px(4);
+}
+
+::-webkit-scrollbar-thumb {
+  width: px(8);
+  background-color: color(secondary);
+  border-radius: px(4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: athelas, "Noto Sans TC", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  background-image: url("../img/bg.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  background-color: #fcfcfd;
+  color: color(gray);
+  width: 100dvw;
+  overflow-x: hidden;
+  line-height: 2;
+  @include font(18);
+
+  &::before {
+    position: absolute;
+    content: url("../img/bg_top.jpg");
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-family: "Baskerville", serif;
+  font-size: px(48);
+  letter-spacing: px(1);
+  font-weight: weight(Regular);
+  min-width: max-content;
+  position: relative;
+  margin-bottom: px(120);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: px(24);
+    height: px(2);
+    background-color: color(gray);
+  }
+}
+
+h3 {
+  font-size: px(36);
+  font-weight: weight(SemiBold);
+  letter-spacing: px(2);
+  text-align: center;
+  line-height: 1.5;
+
+  span {
+    display: block;
+    font-size: px(18);
+    letter-spacing: px(12);
+    margin-left: px(6);
+    transform: translateX(px(1));
+    overflow: hidden;
+  }
+}
+
+a {
+  @include a-color;
+  text-decoration: none;
+}
+
+ul {
+  margin-top: px(24);
+  line-height: 2;
+}
+
+@include max-to(pad) {
+  body {
+    @include font(13);
+  }
+}

@@ -1,0 +1,128 @@
+.popUp {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(#060816, 0.6);
+  z-index: 10;
+
+  .popUp--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: px(6);
+    background: linear-gradient(
+      to bottom,
+      #3a3a2c 0%,
+      #9f8542 50%,
+      #0d0d0d 100%
+    );
+    box-shadow: 0 0 40px black;
+    padding: px(60) px(48);
+    width: 60dvw;
+    max-height: 80dvh;
+    font-size: px(20);
+    color: rgba(white, 0.8);
+
+    .popUp--close {
+      position: absolute;
+      top: px(16);
+      right: px(16);
+      background-color: transparent;
+      height: px(44);
+      width: px(44);
+      padding: 8px;
+      border: none;
+      text-align: center;
+      transition: all 0.2s linear;
+      margin: 0;
+
+      img {
+        width: 100%;
+      }
+
+      &:hover {
+        box-shadow: none;
+        transform: scale(1.1);
+      }
+    }
+
+    .popUp--content {
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-top: px(28);
+      margin-right: px(-24);
+      padding-right: px(24);
+      max-height: calc(80svh - px(196));
+      min-height: max-content;
+    }
+
+    h3 {
+      position: absolute;
+      top: px(16);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: px(20);
+      line-height: px(44);
+      font-weight: 700;
+      width: calc(100% - px(120));
+      color: white;
+    }
+
+    button {
+      margin: 40px auto 12px;
+      padding: 8px 80px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: px(6);
+      opacity: 0.85;
+      padding: px(2);
+      background: linear-gradient(to right, #dbcc44 0%, #e1b544 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+
+  @include max-to(pad) {
+    .popUp--container {
+      width: 80svw;
+      padding: px(24);
+      padding-right: px(40);
+
+      h3 {
+        font-size: 4.5svw;
+      }
+
+      .popUp--content {
+        margin-top: px(40);
+      }
+    }
+  }
+
+  @include max-to(phone) {
+    .popUp--container {
+      padding: px(20);
+      padding-right: px(32);
+      max-height: 90dvh;
+
+      .popUp--content {
+        max-height: calc(90dvh - px(196));
+      }
+    }
+  }
+}

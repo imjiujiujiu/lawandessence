@@ -1,0 +1,52 @@
+// Font Style: Athelas
+@import url("https://use.typekit.net/ygi7sav.css");
+// Font Style: Google Noto Sans TC
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+.noto-sans {
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.athelas {
+  font-family: athelas, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.yu-kyokasho {
+  font-family: Yu Kyokasho New B, cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+// 字重
+$font-weight: (
+  Thin: 100,
+  ExLight: 200,
+  Light: 300,
+  Regular: 400,
+  Medium: 500,
+  SemiBold: 600,
+  Bold: 700,
+  ExBold: 900,
+);
+
+@function weight($key) {
+  @return map-get($font-weight, $key);
+}
+
+// 用法：font-weight: weight(Thin);
+
+@mixin font($size: 16, $weight: Medium) {
+  font-size: px($size);
+  font-weight: map-get($font-weight, $weight);
+}
+
+// 用法：@include font(16,Medium);
+
+.vertical {
+  writing-mode: vertical-lr;
+}

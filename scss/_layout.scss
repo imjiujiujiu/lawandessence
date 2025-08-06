@@ -1,0 +1,351 @@
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+#keyvision {
+  width: 100dvw;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-image: url("../img/anser.svg");
+  // background-size: 100%;
+  // background-repeat: no-repeat;
+  // background-position: top center;
+
+  .main-logo {
+    max-width: px(680);
+  }
+
+  .deco {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    .anser {
+      position: absolute;
+    }
+
+    .anser01 {
+      width: 4svw;
+      right: 15svw;
+      top: 11svw;
+    }
+
+    .anser02 {
+      width: 5.5svw;
+      right: 14svw;
+      top: 15svw;
+    }
+
+    .anser03 {
+      width: 1.5svw;
+      right: 38svw;
+      top: 7svw;
+    }
+
+    .anser04 {
+      width: 3svw;
+      left: 12svw;
+      top: 21svw;
+    }
+  }
+}
+
+#about {
+  height: 90svw;
+}
+
+#attorneys {
+  padding: 10svw 10svw px(60) 25svw;
+  position: relative;
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: px(40);
+    margin-bottom: px(300);
+
+    .title {
+      flex: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 20svw;
+
+      h3 {
+        width: fit-content;
+        display: inline;
+        text-align: center;
+      }
+    }
+
+    .photo {
+      flex: calc(20svw - px(40));
+      flex-grow: 0;
+      text-align: right;
+    }
+
+    .desc {
+      flex: 1;
+      transform: translateY(px(-8));
+      line-height: 1.8;
+
+      dt {
+        font-weight: weight(SemiBold);
+      }
+
+      dd {
+        font-weight: weight(Light);
+        text-align: justify;
+
+        + dt {
+          margin-top: px(20);
+        }
+      }
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &::before {
+    content: url(../img/mountain-1.svg);
+    width: 100svw;
+    top: 23%;
+    right: -10svw;
+    transform: rotateY(180deg);
+  }
+
+  &::after {
+    content: url(../img/mountain-3.svg);
+    width: 60svw;
+    top: 63%;
+    left: -5svw;
+    transform: rotateY(180deg);
+  }
+
+  // pad ~ 1024
+  @include max-to(pad) {
+    padding-left: 20svw;
+    background-size: 75svw;
+    background-position: bottom right -10svw;
+
+    > div {
+      position: relative;
+
+      .photo {
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          max-width: 20svw;
+        }
+      }
+    }
+
+    &::before {
+      top: 25%;
+      width: 60svw;
+    }
+
+    &::after {
+      top: 56%;
+      left: -10svw;
+      width: 90svw;
+    }
+  }
+
+  // small-pad ~ 768
+  @include max-to(small-pad) {
+    background-position: bottom px(240) right -10svw;
+
+    > div {
+      gap: px(40) 0;
+
+      h3 {
+        margin-left: 0;
+      }
+
+      .photo {
+        flex: none;
+
+        img {
+          max-width: 25svw;
+        }
+      }
+
+      .desc {
+        flex: 100%;
+      }
+    }
+  }
+}
+
+#contact {
+  padding-top: 10svw;
+  padding-bottom: 30svw;
+  position: relative;
+
+  &::before {
+    content: url(../img/mountain-2.svg);
+    bottom: 12svw;
+    left: -10svw;
+    width: 60svw;
+  }
+
+  @include max-to(pad) {
+    padding-left: 20svw !important;
+
+    &::before {
+      bottom: 0;
+      width: 90svw;
+    }
+  }
+
+  @include max-to(phone) {
+    padding-left: px(32) !important;
+  }
+}
+
+#client {
+  padding: px(144) px(144) px(100) px(440);
+
+  dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: px(4) px(24);
+    margin-bottom: px(48);
+
+    dt {
+      font-weight: weight(ExBold);
+      flex: 100%;
+      border-bottom: px(1) solid rgba(color(dark), 0.3);
+    }
+
+    dd {
+      flex: calc(50% - px(32));
+      max-width: calc(50% - px(32));
+      font-weight: weight(Thin);
+      line-height: 1.5;
+      padding: px(4) px(0);
+      word-break: break-all;
+      display: list-item;
+      list-style-type: disc;
+      margin-left: px(20);
+    }
+  }
+
+  @include max-to(pad) {
+    margin-left: 20svw;
+  }
+
+  @include max-to(phone) {
+    margin-left: 0;
+
+    dl {
+      dd {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  text-align: center;
+  @include font(16, Light);
+  padding: 30svw px(60) px(60);
+
+  span {
+    & + span {
+      margin-left: px(40);
+    }
+  }
+
+  ul {
+    text-align: center;
+    line-height: 1.5;
+    overflow: hidden;
+    margin-top: px(10);
+
+    li {
+      display: inline-block;
+      overflow: hidden;
+
+      &:not(:last-child) {
+        &::after {
+          content: "｜";
+        }
+      }
+    }
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: url("../img/bg_bottom.jpg");
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  // pad ~ 768
+  @include max-to(pad) {
+    padding: px(240) px(16) px(20);
+
+    span {
+      display: block;
+
+      & + span {
+        margin: 0;
+      }
+    }
+
+    ul {
+      flex-wrap: wrap;
+    }
+
+    &::before {
+      bottom: px(-100);
+      left: -10svw;
+      width: 130svw;
+    }
+  }
+}
+
+.fixed_links {
+  position: fixed;
+  bottom: px(40);
+  right: px(20);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: px(12);
+
+    li {
+      width: px(44);
+      height: px(44);
+      opacity: 0.5;
+      transition: opacity 0.2s;
+
+      @include hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include max-to(phone) {
+    ul {
+      li {
+        opacity: 0.8;
+      }
+    }
+  }
+}

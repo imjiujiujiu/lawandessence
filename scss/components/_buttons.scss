@@ -1,0 +1,27 @@
+button,
+input[type="submit"] {
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  border-width: px(2);
+  border-style: solid;
+  border-radius: px(6);
+  transition: box-shadow 0.2s;
+  border: none;
+
+  &[disabled] {
+    background: linear-gradient(
+      to right bottom,
+      rgba(white, 0.2) 0%,
+      rgba(white, 0.34) 50%,
+      rgba(white, 0.2) 100%
+    ) !important;
+    color: rgba(white, 0.5);
+    cursor: default;
+    border-color: rgba(white, 0.5) !important;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
