@@ -59,12 +59,12 @@ $colors: (
 // background-color: color(gray-8);
 
 // 超連結顏色
-@mixin a-color($default: color(primary), $hover: color(secondary)) {
-  color: $default;
+@mixin a-color($default: primary, $hover: secondary) {
+  color: color($default);
   transition: color 0.2s;
 
   &:hover {
-    color: $hover;
+    color: color($hover);
   }
 }
 

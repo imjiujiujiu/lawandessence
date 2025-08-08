@@ -743,22 +743,34 @@ footer {
   font-size: 1rem;
   font-weight: 300;
   padding: 30svw 3.75rem 3.75rem;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.625rem;
 }
-footer span + span {
-  margin-left: 2.5rem;
+footer img {
+  max-width: 6.25rem;
 }
-footer ul {
-  text-align: center;
-  line-height: 1.5;
-  overflow: hidden;
-  margin-top: 0.625rem;
+footer .contact {
+  text-align: left;
 }
-footer ul li {
-  display: inline-block;
-  overflow: hidden;
+footer p {
+  font-size: 1.25rem;
+  font-family: athelas, Yu Kyokasho New B, cursive;
 }
-footer ul li:not(:last-child)::after {
-  content: "｜";
+footer a {
+  color: #ffffff;
+  color: #ffffff;
+  transition: color 0.2s;
+}
+footer a:hover {
+  color: #de8b44;
+}
+footer .desc {
+  flex: 100%;
+  font-size: 1rem;
 }
 footer::before {
   position: absolute;

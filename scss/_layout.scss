@@ -182,29 +182,34 @@ footer {
   text-align: center;
   @include font(16, Light);
   padding: 30svw px(60) px(60);
+  color: color(white);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: px(26);
 
-  span {
-    & + span {
-      margin-left: px(40);
-    }
+  img {
+    max-width: px(100);
   }
 
-  ul {
-    text-align: center;
-    line-height: 1.5;
-    overflow: hidden;
-    margin-top: px(10);
+  .contact {
+    text-align: left;
+  }
 
-    li {
-      display: inline-block;
-      overflow: hidden;
+  p {
+    font-size: px(20);
+    font-family: athelas, Yu Kyokasho New B, cursive;
+  }
 
-      &:not(:last-child) {
-        &::after {
-          content: "｜";
-        }
-      }
-    }
+  a {
+    color: color(white);
+    @include a-color(white);
+  }
+
+  .desc {
+    flex: 100%;
+    font-size: px(16);
   }
 
   &::before {
