@@ -750,7 +750,7 @@ footer {
   align-items: center;
   gap: 1.625rem;
 }
-footer img {
+footer .line {
   max-width: 6.25rem;
 }
 footer .contact {
@@ -775,6 +775,30 @@ footer .desc {
 footer .desc br {
   display: none;
 }
+footer .deco {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+footer .deco .footer-anser {
+  position: absolute;
+}
+footer .deco .footer-anser01 {
+  width: 5svw;
+  right: 17svw;
+  bottom: 12svw;
+}
+footer .deco .footer-anser02 {
+  width: 5.5svw;
+  right: 14svw;
+  bottom: 12svw;
+}
+footer .deco .footer-anser03 {
+  width: 4.5svw;
+  left: 16svw;
+  bottom: 12svw;
+}
 footer::before {
   position: absolute;
   z-index: -1;
@@ -791,10 +815,10 @@ footer::before {
 @media (max-width: 32.25rem) {
   footer {
     padding: 18.75rem 1.25rem 6.25rem;
-    min-height: 100svh;
   }
   footer .contact {
     text-align: center;
+    flex: 100%;
   }
   footer .desc {
     line-height: 1.5;

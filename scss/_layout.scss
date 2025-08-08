@@ -189,7 +189,7 @@ footer {
   align-items: center;
   gap: px(26);
 
-  img {
+  .line {
     max-width: px(100);
   }
 
@@ -216,6 +216,35 @@ footer {
     }
   }
 
+  .deco {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    .footer-anser {
+      position: absolute;
+    }
+
+    .footer-anser01 {
+      width: 5svw;
+      right: 17svw;
+      bottom: 12svw;
+    }
+
+    .footer-anser02 {
+      width: 5.5svw;
+      right: 14svw;
+      bottom: 12svw;
+    }
+
+    .footer-anser03 {
+      width: 4.5svw;
+      left: 16svw;
+      bottom: 12svw;
+    }
+  }
+
   &::before {
     position: absolute;
     z-index: -1;
@@ -232,10 +261,10 @@ footer {
 
   @include max-to(mobile) {
     padding: px(300) px(20) px(100);
-    min-height: 100svh;
 
     .contact {
       text-align: center;
+      flex: 100%;
     }
 
     .desc {
