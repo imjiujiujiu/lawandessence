@@ -534,6 +534,11 @@ body::before {
   background-position: top center;
   background-size: 100%;
 }
+@media (max-width: 32.25rem) {
+  body::before {
+    background-size: 200%;
+  }
+}
 
 img {
   max-width: 100%;
@@ -557,6 +562,11 @@ h4 {
   font-weight: 600;
   line-height: 1.5;
   margin-bottom: 1.75rem;
+}
+
+.small {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 a {
@@ -589,6 +599,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40svw;
 }
 #keyvision .main-logo {
   max-width: 42.5rem;
@@ -626,7 +637,7 @@ section {
 #about {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 9.375rem;
+  margin: 12.5rem 0;
   gap: 0 3.75rem;
 }
 #about h2 {
@@ -661,65 +672,69 @@ section {
   }
 }
 
-#service {
+#attorneys {
   position: relative;
   display: flex;
   gap: 3.375rem;
   margin-bottom: 18.75rem;
 }
-#service .vertical {
+#attorneys .vertical {
   margin-top: 13.75rem;
 }
-#service > div {
+#attorneys > div {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   width: 100%;
 }
-#service > div .photo {
+#attorneys > div .photo {
   display: flex;
   justify-content: flex-end;
 }
-#service > div .photo img {
+#attorneys > div .photo img {
   width: 13.125rem;
 }
-#service > div h4 {
+#attorneys > div h4 {
   margin-bottom: 1.5rem;
 }
-#service > div .desc {
+#attorneys > div .desc {
   flex: 1;
   line-height: 1.8;
 }
-#service > div .desc dt {
+#attorneys > div .desc dt {
   font-weight: 600;
 }
-#service > div .desc dd {
+#attorneys > div .desc dd {
   font-weight: 300;
   text-align: justify;
 }
-#service > div .desc dd + dt {
+#attorneys > div .desc dd + dt {
   margin-top: 1.25rem;
 }
 @media (max-width: 32.25rem) {
-  #service {
+  #attorneys {
     flex-wrap: wrap;
     gap: 0;
   }
-  #service .vertical {
+  #attorneys .vertical {
     flex: 100%;
     margin-bottom: 1rem;
   }
-  #service > div h4 {
+  #attorneys > div h4 {
     margin-bottom: 0;
   }
-  #service > div .photo {
+  #attorneys > div .photo {
     order: 1;
     justify-content: center;
     margin-bottom: 1.25rem;
   }
-  #service > div .desc {
+  #attorneys > div .desc {
     order: 2;
   }
+}
+
+#service {
+  color: #ffffff;
 }
 
 footer {

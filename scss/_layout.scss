@@ -14,10 +14,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  // background-image: url("../img/anser.svg");
-  // background-size: 100%;
-  // background-repeat: no-repeat;
-  // background-position: top center;
+  margin-bottom: 40svw;
 
   .main-logo {
     max-width: px(680);
@@ -62,7 +59,7 @@ section {
 #about {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: px(150);
+  margin: px(200) 0;
   gap: 0 px(60);
 
   h2 {
@@ -101,7 +98,7 @@ section {
   }
 }
 
-#service {
+#attorneys {
   position: relative;
   display: flex;
   gap: px(54);
@@ -174,6 +171,10 @@ section {
       }
     }
   }
+}
+
+#service {
+  color: color(white);
 }
 
 footer {
