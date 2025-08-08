@@ -772,6 +772,9 @@ footer .desc {
   flex: 100%;
   font-size: 1rem;
 }
+footer .desc br {
+  display: none;
+}
 footer::before {
   position: absolute;
   z-index: -1;
@@ -784,4 +787,22 @@ footer::before {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 100%;
+}
+@media (max-width: 32.25rem) {
+  footer {
+    padding: 18.75rem 1.25rem 6.25rem;
+    min-height: 100svh;
+  }
+  footer .contact {
+    text-align: center;
+  }
+  footer .desc {
+    line-height: 1.5;
+  }
+  footer .desc br {
+    display: inline;
+  }
+  footer::before {
+    background-size: 300%;
+  }
 }

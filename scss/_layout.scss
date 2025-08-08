@@ -210,6 +210,10 @@ footer {
   .desc {
     flex: 100%;
     font-size: px(16);
+
+    br {
+      display: none;
+    }
   }
 
   &::before {
@@ -224,5 +228,26 @@ footer {
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 100%;
+  }
+
+  @include max-to(mobile) {
+    padding: px(300) px(20) px(100);
+    min-height: 100svh;
+
+    .contact {
+      text-align: center;
+    }
+
+    .desc {
+      line-height: 1.5;
+
+      br {
+        display: inline;
+      }
+    }
+
+    &::before {
+      background-size: 300%;
+    }
   }
 }
