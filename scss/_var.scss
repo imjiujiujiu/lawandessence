@@ -12,8 +12,8 @@ $breakpoints: (
   laptop: px(1200),
   pad: px(1024),
   small-pad: px(768),
-  phone: px(516),
-  small-phone: px(320),
+  mobile: px(516),
+  small-mobile: px(320),
 );
 
 @mixin max-to($bp) {
@@ -59,7 +59,7 @@ $colors: (
 // background-color: color(gray-8);
 
 // 超連結顏色
-@mixin a-color($default: color(gray), $hover: color(primary)) {
+@mixin a-color($default: color(primary), $hover: color(secondary)) {
   color: $default;
   transition: color 0.2s;
 

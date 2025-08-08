@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -39,16 +40,20 @@ body {
   background-color: #fcfcfd;
   color: color(gray);
   width: 100dvw;
-  overflow-x: hidden;
   line-height: 2;
   @include font(18);
 
   &::before {
     position: absolute;
-    content: url("../img/bg_top.jpg");
+    content: "";
     top: 0;
-    right: 0;
     left: 0;
+    width: 100svw;
+    height: px(2000);
+    background-image: url("../img/bg_top.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
   }
 }
 
@@ -57,54 +62,29 @@ img {
 }
 
 h2 {
-  font-family: "Baskerville", serif;
   font-size: px(48);
-  letter-spacing: px(1);
   font-weight: weight(Regular);
   min-width: max-content;
   position: relative;
-  margin-bottom: px(120);
+  margin-bottom: px(44);
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: px(24);
-    height: px(2);
-    background-color: color(gray);
+  @include max-to(pad) {
+    margin-bottom: px(20);
   }
 }
 
-h3 {
-  font-size: px(36);
+h4 {
+  font-size: px(28);
   font-weight: weight(SemiBold);
-  letter-spacing: px(2);
-  text-align: center;
   line-height: 1.5;
-
-  span {
-    display: block;
-    font-size: px(18);
-    letter-spacing: px(12);
-    margin-left: px(6);
-    transform: translateX(px(1));
-    overflow: hidden;
-  }
+  margin-bottom: px(28);
 }
 
 a {
   @include a-color;
-  text-decoration: none;
 }
 
 ul {
   margin-top: px(24);
   line-height: 2;
-}
-
-@include max-to(pad) {
-  body {
-    @include font(13);
-  }
 }

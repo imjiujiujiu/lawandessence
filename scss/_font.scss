@@ -49,4 +49,9 @@ $font-weight: (
 
 .vertical {
   writing-mode: vertical-lr;
+  font-size: px(28);
+
+  @include max-to(mobile) {
+    writing-mode: horizontal-tb;
+  }
 }

@@ -145,6 +145,12 @@ button {
 
 .vertical {
   writing-mode: vertical-lr;
+  font-size: 1.75rem;
+}
+@media (max-width: 32.25rem) {
+  .vertical {
+    writing-mode: horizontal-tb;
+  }
 }
 
 button,
@@ -331,16 +337,6 @@ form input[disabled]:hover {
     margin-top: 2.5rem;
   }
 }
-@media (max-width: 32.25rem) {
-  .popUp .popUp--container {
-    padding: 1.25rem;
-    padding-right: 2rem;
-    max-height: 90dvh;
-  }
-  .popUp .popUp--container .popUp--content {
-    max-height: calc(90dvh - 12.25rem);
-  }
-}
 
 table {
   margin: 1.25rem 4.25rem 0 4.25rem;
@@ -392,11 +388,6 @@ table tbody tr:last-child td:first-child {
 }
 table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 0.375rem;
-}
-@media (max-width: 32.25rem) {
-  table thead tr th:first-child {
-    min-width: auto;
-  }
 }
 
 .slick {
@@ -511,6 +502,7 @@ table tbody tr:last-child td:last-child {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -526,17 +518,21 @@ body {
   background-color: #fcfcfd;
   color: #595757;
   width: 100dvw;
-  overflow-x: hidden;
   line-height: 2;
   font-size: 1.125rem;
   font-weight: 500;
 }
 body::before {
   position: absolute;
-  content: url("../img/bg_top.jpg");
+  content: "";
   top: 0;
-  right: 0;
   left: 0;
+  width: 100svw;
+  height: 125rem;
+  background-image: url("../img/bg_top.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
 }
 
 img {
@@ -544,47 +540,31 @@ img {
 }
 
 h2 {
-  font-family: "Baskerville", serif;
   font-size: 3rem;
-  letter-spacing: 0.0625rem;
   font-weight: 400;
   min-width: max-content;
   position: relative;
-  margin-bottom: 7.5rem;
+  margin-bottom: 2.75rem;
 }
-h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 1.5rem;
-  height: 0.125rem;
-  background-color: #595757;
+@media (max-width: 64rem) {
+  h2 {
+    margin-bottom: 1.25rem;
+  }
 }
 
-h3 {
-  font-size: 2.25rem;
+h4 {
+  font-size: 1.75rem;
   font-weight: 600;
-  letter-spacing: 0.125rem;
-  text-align: center;
   line-height: 1.5;
-}
-h3 span {
-  display: block;
-  font-size: 1.125rem;
-  letter-spacing: 0.75rem;
-  margin-left: 0.375rem;
-  transform: translateX(0.0625rem);
-  overflow: hidden;
+  margin-bottom: 1.75rem;
 }
 
 a {
-  color: #595757;
+  color: #324c61;
   transition: color 0.2s;
-  text-decoration: none;
 }
 a:hover {
-  color: #324c61;
+  color: #de8b44;
 }
 
 ul {
@@ -592,15 +572,15 @@ ul {
   line-height: 2;
 }
 
-@media (max-width: 64rem) {
-  body {
-    font-size: 0.8125rem;
-    font-weight: 500;
-  }
-}
 section {
   position: relative;
   overflow: hidden;
+  padding: 0 8.75rem;
+}
+@media (max-width: 64rem) {
+  section {
+    padding: 1.25rem;
+  }
 }
 
 #keyvision {
@@ -644,177 +624,101 @@ section {
 }
 
 #about {
-  height: 90svw;
-}
-
-#attorneys {
-  padding: 10svw 10svw 3.75rem 25svw;
-  position: relative;
-}
-#attorneys > div {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  margin-bottom: 9.375rem;
+  gap: 0 3.75rem;
+}
+#about h2 {
+  flex: 100%;
+}
+#about .about-content {
+  padding-top: 3.75rem;
+  flex: 1;
+}
+@media (max-width: 64rem) {
+  #about {
+    gap: 1rem;
+  }
+  #about h2 {
+    text-align: right;
+  }
+  #about .about-content {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 32.25rem) {
+  #about {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  #about h2 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  #about .vertical {
+    flex: 100%;
+  }
+}
+
+#service {
+  position: relative;
+  display: flex;
+  gap: 3.375rem;
   margin-bottom: 18.75rem;
 }
-#attorneys > div .title {
-  flex: 100%;
+#service .vertical {
+  margin-top: 13.75rem;
+}
+#service > div {
   display: flex;
   flex-direction: column;
-  margin-left: 20svw;
+  gap: 0.25rem;
+  width: 100%;
 }
-#attorneys > div .title h3 {
-  width: fit-content;
-  display: inline;
-  text-align: center;
+#service > div .photo {
+  display: flex;
+  justify-content: flex-end;
 }
-#attorneys > div .photo {
-  flex: calc(20svw - 2.5rem);
-  flex-grow: 0;
-  text-align: right;
+#service > div .photo img {
+  width: 13.125rem;
 }
-#attorneys > div .desc {
+#service > div h4 {
+  margin-bottom: 1.5rem;
+}
+#service > div .desc {
   flex: 1;
-  transform: translateY(-0.5rem);
   line-height: 1.8;
 }
-#attorneys > div .desc dt {
+#service > div .desc dt {
   font-weight: 600;
 }
-#attorneys > div .desc dd {
+#service > div .desc dd {
   font-weight: 300;
   text-align: justify;
 }
-#attorneys > div .desc dd + dt {
+#service > div .desc dd + dt {
   margin-top: 1.25rem;
 }
-#attorneys::before, #attorneys::after {
-  position: absolute;
-  z-index: -1;
-}
-#attorneys::before {
-  content: url(../img/mountain-1.svg);
-  width: 100svw;
-  top: 23%;
-  right: -10svw;
-  transform: rotateY(180deg);
-}
-#attorneys::after {
-  content: url(../img/mountain-3.svg);
-  width: 60svw;
-  top: 63%;
-  left: -5svw;
-  transform: rotateY(180deg);
-}
-@media (max-width: 64rem) {
-  #attorneys {
-    padding-left: 20svw;
-    background-size: 75svw;
-    background-position: bottom right -10svw;
-  }
-  #attorneys > div {
-    position: relative;
-  }
-  #attorneys > div .photo img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 20svw;
-  }
-  #attorneys::before {
-    top: 25%;
-    width: 60svw;
-  }
-  #attorneys::after {
-    top: 56%;
-    left: -10svw;
-    width: 90svw;
-  }
-}
-@media (max-width: 48rem) {
-  #attorneys {
-    background-position: bottom 15rem right -10svw;
-  }
-  #attorneys > div {
-    gap: 2.5rem 0;
-  }
-  #attorneys > div h3 {
-    margin-left: 0;
-  }
-  #attorneys > div .photo {
-    flex: none;
-  }
-  #attorneys > div .photo img {
-    max-width: 25svw;
-  }
-  #attorneys > div .desc {
-    flex: 100%;
-  }
-}
-
-#contact {
-  padding-top: 10svw;
-  padding-bottom: 30svw;
-  position: relative;
-}
-#contact::before {
-  content: url(../img/mountain-2.svg);
-  bottom: 12svw;
-  left: -10svw;
-  width: 60svw;
-}
-@media (max-width: 64rem) {
-  #contact {
-    padding-left: 20svw !important;
-  }
-  #contact::before {
-    bottom: 0;
-    width: 90svw;
-  }
-}
 @media (max-width: 32.25rem) {
-  #contact {
-    padding-left: 2rem !important;
+  #service {
+    flex-wrap: wrap;
+    gap: 0;
   }
-}
-
-#client {
-  padding: 9rem 9rem 6.25rem 27.5rem;
-}
-#client dl {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.5rem;
-  margin-bottom: 3rem;
-}
-#client dl dt {
-  font-weight: 900;
-  flex: 100%;
-  border-bottom: 0.0625rem solid rgba(35, 24, 21, 0.3);
-}
-#client dl dd {
-  flex: calc(50% - 2rem);
-  max-width: calc(50% - 2rem);
-  font-weight: 100;
-  line-height: 1.5;
-  padding: 0.25rem 0rem;
-  word-break: break-all;
-  display: list-item;
-  list-style-type: disc;
-  margin-left: 1.25rem;
-}
-@media (max-width: 64rem) {
-  #client {
-    margin-left: 20svw;
-  }
-}
-@media (max-width: 32.25rem) {
-  #client {
-    margin-left: 0;
-  }
-  #client dl dd {
+  #service .vertical {
     flex: 100%;
-    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  #service > div h4 {
+    margin-bottom: 0;
+  }
+  #service > div .photo {
+    order: 1;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  #service > div .desc {
+    order: 2;
   }
 }
 
@@ -844,54 +748,13 @@ footer ul li:not(:last-child)::after {
 footer::before {
   position: absolute;
   z-index: -1;
-  content: url("../img/bg_bottom.jpg");
+  content: "";
   bottom: 0;
-  right: 0;
   left: 0;
-}
-@media (max-width: 64rem) {
-  footer {
-    padding: 15rem 1rem 1.25rem;
-  }
-  footer span {
-    display: block;
-  }
-  footer span + span {
-    margin: 0;
-  }
-  footer ul {
-    flex-wrap: wrap;
-  }
-  footer::before {
-    bottom: -6.25rem;
-    left: -10svw;
-    width: 130svw;
-  }
-}
-
-.fixed_links {
-  position: fixed;
-  bottom: 2.5rem;
-  right: 1.25rem;
-}
-.fixed_links ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.fixed_links ul li {
-  width: 2.75rem;
-  height: 2.75rem;
-  opacity: 0.5;
-  transition: opacity 0.2s;
-}
-@media (hover: hover) {
-  .fixed_links ul li:hover {
-    opacity: 1;
-  }
-}
-@media (max-width: 32.25rem) {
-  .fixed_links ul li {
-    opacity: 0.8;
-  }
+  width: 100svw;
+  height: 312.5rem;
+  background-image: url("../img/bg_bottom.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100%;
 }
