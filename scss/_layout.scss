@@ -1,6 +1,5 @@
 section {
   position: relative;
-  overflow: hidden;
   padding: 0 px(140);
 
   @include max-to(pad) {
@@ -31,27 +30,145 @@ section {
     }
 
     .anser01 {
-      width: 4svw;
-      right: 15svw;
-      top: 11svw;
+      animation: anser01 30s both;
     }
 
     .anser02 {
-      width: 5.5svw;
-      right: 14svw;
-      top: 15svw;
+      animation: anser02 30s both;
     }
 
     .anser03 {
-      width: 1.5svw;
-      right: 38svw;
-      top: 7svw;
+      animation: anser03 30s both;
     }
 
     .anser04 {
-      width: 3svw;
-      left: 12svw;
-      top: 21svw;
+      animation: anser04 30s both;
+    }
+
+    @keyframes anser01 {
+      0% {
+        width: 3.5svw;
+        right: 13svw;
+        top: 15svw;
+      }
+      100% {
+        width: 4svw;
+        right: 15svw;
+        top: 11svw;
+      }
+    }
+
+    @keyframes anser02 {
+      0% {
+        width: 5svw;
+        right: 10svw;
+        top: 14svw;
+      }
+      100% {
+        width: 5.5svw;
+        right: 14svw;
+        top: 15svw;
+      }
+    }
+
+    @keyframes anser03 {
+      0% {
+        width: 1svw;
+        right: 33svw;
+        top: 5svw;
+      }
+      100% {
+        width: 1.5svw;
+        right: 38svw;
+        top: 7svw;
+      }
+    }
+
+    @keyframes anser04 {
+      0% {
+        width: 4svw;
+        left: 14svw;
+        top: 24svw;
+      }
+      100% {
+        width: 3svw;
+        left: 12svw;
+        top: 21svw;
+      }
+    }
+  }
+
+  @include max-to(mobile) {
+    .deco {
+      .anser01 {
+        animation: anser01 30s both;
+      }
+
+      .anser02 {
+        animation: anser02 30s both;
+      }
+
+      .anser03 {
+        animation: anser03 30s both;
+      }
+
+      .anser04 {
+        animation: anser04 30s both;
+      }
+
+      @keyframes anser01 {
+        0% {
+          width: 7svw;
+          right: 5svw;
+          top: 23svh;
+        }
+        100% {
+          width: 10svw;
+          right: 15svw;
+          top: 21svh;
+        }
+      }
+
+      @keyframes anser02 {
+        0% {
+          width: 6svw;
+          right: 11svw;
+          top: 24svh;
+        }
+        100% {
+          width: 8svw;
+          right: 12.5svw;
+          top: 22svh;
+        }
+      }
+
+      @keyframes anser03 {
+        0% {
+          width: 4svw;
+          left: 15svw;
+          top: 6svh;
+        }
+        100% {
+          width: 5svw;
+          left: 10svw;
+          top: 7svh;
+        }
+      }
+
+      @keyframes anser04 {
+        0% {
+          width: 5svw;
+          left: auto;
+          right: 7svw;
+          top: 85svh;
+        }
+        100% {
+          width: 7svw;
+          left: auto;
+          right: 12svw;
+          top: 80svh;
+        }
+      }
     }
   }
 }
@@ -69,6 +186,18 @@ section {
   .about-content {
     padding-top: px(60);
     flex: 1;
+    line-height: 1.5;
+
+    > p {
+      margin: px(16) 0;
+    }
+
+    i {
+      font-size: px(14);
+      cursor: pointer;
+      transform: translate(0, px(-6));
+      margin: 0 px(-2);
+    }
   }
 
   @include max-to(pad) {
@@ -174,14 +303,36 @@ section {
 }
 
 #service {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 px(60);
   color: color(white);
+
+  ul {
+    margin-top: px(60);
+    list-style-type: disc;
+    flex: 1;
+
+    li {
+      line-height: 1.5;
+      margin-bottom: px(12);
+    }
+  }
+
+  @include max-to(mobile) {
+    flex-direction: column;
+
+    ul {
+      margin: px(20) 0 0 px(20);
+    }
+  }
 }
 
 footer {
   position: relative;
   text-align: center;
   @include font(16, Light);
-  padding: 30svw px(60) px(60);
+  padding: 25svw px(60) px(60);
   color: color(white);
   display: flex;
   flex-wrap: wrap;
@@ -227,21 +378,54 @@ footer {
     }
 
     .footer-anser01 {
-      width: 5svw;
-      right: 17svw;
-      bottom: 12svw;
+      animation: footer-anser01 30s 60s both;
     }
 
     .footer-anser02 {
-      width: 5.5svw;
-      right: 14svw;
-      bottom: 12svw;
+      animation: footer-anser02 30s 60s both;
     }
 
     .footer-anser03 {
-      width: 4.5svw;
-      left: 16svw;
-      bottom: 12svw;
+      animation: footer-anser03 30s 60s both;
+    }
+
+    @keyframes footer-anser01 {
+      0% {
+        width: 4svw;
+        right: 15svw;
+        bottom: 10svw;
+      }
+      100% {
+        width: 5svw;
+        right: 17svw;
+        bottom: 12svw;
+      }
+    }
+
+    @keyframes footer-anser02 {
+      0% {
+        width: 3svw;
+        right: 12svw;
+        bottom: 5svw;
+      }
+      100% {
+        width: 5.5svw;
+        right: 14svw;
+        bottom: 12svw;
+      }
+    }
+
+    @keyframes footer-anser03 {
+      0% {
+        width: 4svw;
+        left: 13svw;
+        bottom: 10svw;
+      }
+      100% {
+        width: 4.5svw;
+        left: 16svw;
+        bottom: 12svw;
+      }
     }
   }
 
@@ -251,12 +435,18 @@ footer {
     content: "";
     bottom: 0;
     left: 0;
-    width: 100svw;
+    width: 120svw;
     height: px(5000);
     background-image: url("../img/bg_bottom.jpg");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: 100%;
+  }
+
+  @include max-to(pad) {
+    &::before {
+      background-size: 180%;
+    }
   }
 
   @include max-to(mobile) {
@@ -275,8 +465,60 @@ footer {
       }
     }
 
+    .deco {
+      .footer-anser01 {
+        animation: footer-anser01 30s 60s both;
+      }
+
+      .footer-anser02 {
+        animation: footer-anser02 30s 60s both;
+      }
+
+      .footer-anser03 {
+        animation: footer-anser03 30s 60s both;
+      }
+
+      @keyframes footer-anser01 {
+        0% {
+          width: 8svw;
+          right: 4svw;
+          bottom: 2svh;
+        }
+        100% {
+          width: 9svw;
+          right: 11svw;
+          bottom: 5svh;
+        }
+      }
+
+      @keyframes footer-anser02 {
+        0% {
+          width: 5svw;
+          right: 8svw;
+          bottom: 4svh;
+        }
+        100% {
+          width: 7svw;
+          right: 9svw;
+          bottom: 5svh;
+        }
+      }
+
+      @keyframes footer-anser03 {
+        0% {
+          width: 5svw;
+          left: 5svw;
+          bottom: 25svh;
+        }
+        100% {
+          width: 7svw;
+          left: 12svw;
+          bottom: 30svh;
+        }
+      }
+    }
     &::before {
-      background-size: 300%;
+      background-size: 400%;
     }
   }
 }

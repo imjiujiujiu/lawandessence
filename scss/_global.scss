@@ -42,6 +42,7 @@ body {
   width: 100dvw;
   line-height: 2;
   @include font(18);
+  overflow-x: hidden;
 
   &::before {
     position: absolute;
@@ -54,6 +55,12 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100%;
+  }
+
+  @include max-to(pad) {
+    &::before {
+      background-size: 150%;
+    }
   }
 
   @include max-to(mobile) {
